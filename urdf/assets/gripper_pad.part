@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "a9f0ca4d467d5a1de7911c16",
+    "documentMicroversion": "2aa5e31ca2fe34d8a5eb297d",
+    "elementId": "89a427d49018186250b1257f",
+    "fullConfiguration": "default",
+    "id": "MToYpXzYYVsVDrUs2",
+    "isStandardContent": false,
+    "name": "gripper_pad <31>",
+    "partId": "JHD",
+    "suppressed": false,
+    "type": "Part"
+}

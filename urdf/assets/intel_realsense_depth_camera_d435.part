@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "76ced8ea1b088c523eccecc2",
+    "documentMicroversion": "341b51b10057f8ac1cc29eab",
+    "documentVersion": "0cd21ee3ecc0b2bf9a3dbf24",
+    "elementId": "fda431dcf78b07605bb4fc72",
+    "fullConfiguration": "default",
+    "id": "MLb9C4DDySJ4ad3Fh",
+    "isStandardContent": false,
+    "name": "Intel_RealSense_Depth_Camera_D435 <2>",
+    "partId": "JFD",
+    "suppressed": false,
+    "type": "Part"
+}

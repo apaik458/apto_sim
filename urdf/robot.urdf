@@ -1,0 +1,1677 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/a9f0ca4d467d5a1de7911c16/w/0cdbc06632209af55bd6e68f/e/b73780e52edfafc720292c0b -->
+<robot name="apto_urdf">
+  <!-- Link aluminium_extrusion_20x20_180 -->
+  <link name="aluminium_extrusion_20x20_180">
+    <inertial>
+      <origin xyz="0.000211568 0.0297621 0.126073" rpy="0 0 0"/>
+      <mass value="0.960594"/>
+      <inertia ixx="0.0141761" ixy="1.5073e-06" ixz="9.5742e-06" iyy="0.0143693" iyz="0.00311787" izz="0.00583947"/>
+    </inertial>
+    <!-- Part aluminium_extrusion_20x20_180 -->
+    <visual>
+      <origin xyz="0.16 0.02 0.01" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/aluminium_extrusion_20x20_180.stl"/>
+      </geometry>
+      <material name="aluminium_extrusion_20x20_180_material">
+        <color rgba="0.262745 0.282353 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.16 0.02 0.01" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/aluminium_extrusion_20x20_180.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_m2_5_6 -->
+    <visual>
+      <origin xyz="-0.021 0.0195 0.1195" rpy="0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+      <material name="standoff_m2_5_6_material">
+        <color rgba="0.482353 0.490196 0.494118 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.021 0.0195 0.1195" rpy="0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part aluminium_extrusion_20x20_180_2 -->
+    <visual>
+      <origin xyz="0.1 -0.08 0.01" rpy="-0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/aluminium_extrusion_20x20_180.stl"/>
+      </geometry>
+      <material name="aluminium_extrusion_20x20_180_2_material">
+        <color rgba="0.262745 0.282353 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.1 -0.08 0.01" rpy="-0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/aluminium_extrusion_20x20_180.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part body_main -->
+    <visual>
+      <origin xyz="-0.0495 -0.014 0.2045" rpy="-0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/body_main.stl"/>
+      </geometry>
+      <material name="body_main_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0495 -0.014 0.2045" rpy="-0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/body_main.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part servo_driver_board -->
+    <visual>
+      <origin xyz="0.0165 0.0271 0.10175" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/servo_driver_board.stl"/>
+      </geometry>
+      <material name="servo_driver_board_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0165 0.0271 0.10175" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/servo_driver_board.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_m2_5_6_2 -->
+    <visual>
+      <origin xyz="0.014 0.0195 0.06225" rpy="-0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+      <material name="standoff_m2_5_6_2_material">
+        <color rgba="0.482353 0.490196 0.494118 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.014 0.0195 0.06225" rpy="-0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bearing_plate -->
+    <visual>
+      <origin xyz="-0.064 6.85352e-07 0.238625" rpy="1.1e-11 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bearing_plate.stl"/>
+      </geometry>
+      <material name="bearing_plate_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.064 6.85352e-07 0.238625" rpy="1.1e-11 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bearing_plate.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part driver_board_clamp -->
+    <visual>
+      <origin xyz="0.069 0.0315 0.055652" rpy="0 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/driver_board_clamp.stl"/>
+      </geometry>
+      <material name="driver_board_clamp_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.069 0.0315 0.055652" rpy="0 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/driver_board_clamp.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_m2_5_6_3 -->
+    <visual>
+      <origin xyz="0.021 0.0195 0.1195" rpy="0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+      <material name="standoff_m2_5_6_3_material">
+        <color rgba="0.482353 0.490196 0.494118 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.021 0.0195 0.1195" rpy="0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_m2_5_6_4 -->
+    <visual>
+      <origin xyz="0.014 0.0195 0.09925" rpy="-0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+      <material name="standoff_m2_5_6_4_material">
+        <color rgba="0.482353 0.490196 0.494118 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.014 0.0195 0.09925" rpy="-0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part driver_board_stand -->
+    <visual>
+      <origin xyz="0.019 0.016 0.05725" rpy="-0 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/driver_board_stand.stl"/>
+      </geometry>
+      <material name="driver_board_stand_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.019 0.016 0.05725" rpy="-0 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/driver_board_stand.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_m2_5_6_5 -->
+    <visual>
+      <origin xyz="-0.014 0.0195 0.09925" rpy="0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+      <material name="standoff_m2_5_6_5_material">
+        <color rgba="0.482353 0.490196 0.494118 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.014 0.0195 0.09925" rpy="0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part aluminium_extrusion_20x20_180_3 -->
+    <visual>
+      <origin xyz="0.16 -1e-12 0.01" rpy="-3.14159 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/aluminium_extrusion_20x20_180.stl"/>
+      </geometry>
+      <material name="aluminium_extrusion_20x20_180_3_material">
+        <color rgba="0.262745 0.282353 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.16 -1e-12 0.01" rpy="-3.14159 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/aluminium_extrusion_20x20_180.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_m2_5_6_6 -->
+    <visual>
+      <origin xyz="0.021 0.0195 0.1565" rpy="0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+      <material name="standoff_m2_5_6_6_material">
+        <color rgba="0.482353 0.490196 0.494118 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.021 0.0195 0.1565" rpy="0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part aluminium_extrusion_20x20_180_4 -->
+    <visual>
+      <origin xyz="-0 1e-12 -0.05" rpy="1.5708 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/aluminium_extrusion_20x20_180.stl"/>
+      </geometry>
+      <material name="aluminium_extrusion_20x20_180_4_material">
+        <color rgba="0.262745 0.282353 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 1e-12 -0.05" rpy="1.5708 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/aluminium_extrusion_20x20_180.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bearing_roller -->
+    <visual>
+      <origin xyz="-0.065 6.85352e-07 0.238625" rpy="1.1e-11 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bearing_roller.stl"/>
+      </geometry>
+      <material name="bearing_roller_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.065 6.85352e-07 0.238625" rpy="1.1e-11 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bearing_roller.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part power_distribution_board_stand -->
+    <visual>
+      <origin xyz="-0.027 0.016 0.1625" rpy="-3.14159 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/power_distribution_board_stand.stl"/>
+      </geometry>
+      <material name="power_distribution_board_stand_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.027 0.016 0.1625" rpy="-3.14159 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/power_distribution_board_stand.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bearing_roller_2 -->
+    <visual>
+      <origin xyz="0.065 -6.8535e-07 0.238625" rpy="-3.14159 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bearing_roller.stl"/>
+      </geometry>
+      <material name="bearing_roller_2_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.065 -6.8535e-07 0.238625" rpy="-3.14159 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bearing_roller.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part power_distribution_board -->
+    <visual>
+      <origin xyz="0.025 0.0255 0.1605" rpy="1.5708 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/power_distribution_board.stl"/>
+      </geometry>
+      <material name="power_distribution_board_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.025 0.0255 0.1605" rpy="1.5708 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/power_distribution_board.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part body_base -->
+    <visual>
+      <origin xyz="-0.01025 0.01025 0.17175" rpy="0 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/body_base.stl"/>
+      </geometry>
+      <material name="body_base_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.01025 0.01025 0.17175" rpy="0 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/body_base.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part cf35_12 -->
+    <visual>
+      <origin xyz="-0.0091 0.025419 0.27225" rpy="-0 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+      <material name="cf35_12_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0091 0.025419 0.27225" rpy="-0 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part st3025 -->
+    <visual>
+      <origin xyz="-0.04145 1e-12 0.228625" rpy="-1.1e-11 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/st3025.stl"/>
+      </geometry>
+      <material name="st3025_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.04145 1e-12 0.228625" rpy="-1.1e-11 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/st3025.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part st3025_2 -->
+    <visual>
+      <origin xyz="0.04145 1e-12 0.228625" rpy="3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/st3025.stl"/>
+      </geometry>
+      <material name="st3025_2_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.04145 1e-12 0.228625" rpy="3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/st3025.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part body_arm_frame -->
+    <visual>
+      <origin xyz="-0.06 0.0140007 0.204375" rpy="0 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/body_arm_frame.stl"/>
+      </geometry>
+      <material name="body_arm_frame_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 0.0140007 0.204375" rpy="0 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/body_arm_frame.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part aluminium_extrusion_20x20_180_5 -->
+    <visual>
+      <origin xyz="-0.1 -0.08 0.01" rpy="1.1e-11 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/aluminium_extrusion_20x20_180.stl"/>
+      </geometry>
+      <material name="aluminium_extrusion_20x20_180_5_material">
+        <color rgba="0.262745 0.282353 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1 -0.08 0.01" rpy="1.1e-11 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/aluminium_extrusion_20x20_180.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part servo_frame_1 -->
+    <visual>
+      <origin xyz="-0.0176 0.004919 0.25275" rpy="0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_1.stl"/>
+      </geometry>
+      <material name="servo_frame_1_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0176 0.004919 0.25275" rpy="0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part aluminium_extrusion_20x20_180_6 -->
+    <visual>
+      <origin xyz="0.16 0.16 0.01" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/aluminium_extrusion_20x20_180.stl"/>
+      </geometry>
+      <material name="aluminium_extrusion_20x20_180_6_material">
+        <color rgba="0.262745 0.282353 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.16 0.16 0.01" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/aluminium_extrusion_20x20_180.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part body_arm_frame_2 -->
+    <visual>
+      <origin xyz="0.06 -0.0140007 0.204375" rpy="-0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/body_arm_frame.stl"/>
+      </geometry>
+      <material name="body_arm_frame_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.06 -0.0140007 0.204375" rpy="-0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/body_arm_frame.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bearing_plate_2 -->
+    <visual>
+      <origin xyz="0.064 -6.8535e-07 0.238625" rpy="-3.14159 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bearing_plate.stl"/>
+      </geometry>
+      <material name="bearing_plate_2_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.064 -6.8535e-07 0.238625" rpy="-3.14159 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bearing_plate.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_m2_5_6_7 -->
+    <visual>
+      <origin xyz="-0.021 0.0195 0.1565" rpy="0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+      <material name="standoff_m2_5_6_7_material">
+        <color rgba="0.482353 0.490196 0.494118 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.021 0.0195 0.1565" rpy="0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_m2_5_6_8 -->
+    <visual>
+      <origin xyz="-0.014 0.0195 0.06225" rpy="-0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+      <material name="standoff_m2_5_6_8_material">
+        <color rgba="0.482353 0.490196 0.494118 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.014 0.0195 0.06225" rpy="-0 -0 -1.1e-11"/>
+      <geometry>
+        <mesh filename="package://assets/standoff_m2_5_6.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link servo_frame_3 -->
+  <link name="servo_frame_3">
+    <inertial>
+      <origin xyz="-0.00305554 0.0459406 0.0164659" rpy="0 0 0"/>
+      <mass value="0.0949617"/>
+      <inertia ixx="8.54494e-05" ixy="1.24958e-06" ixz="2.5524e-06" iyy="7.71908e-05" iyz="8.08977e-07" izz="1.9351e-05"/>
+    </inertial>
+    <!-- Part servo_frame_3 -->
+    <visual>
+      <origin xyz="-0.0105 0.0259 0.0392" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_3.stl"/>
+      </geometry>
+      <material name="servo_frame_3_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0105 0.0259 0.0392" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part camera_clamp -->
+    <visual>
+      <origin xyz="0.001 0.0359 -0.0759" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/camera_clamp.stl"/>
+      </geometry>
+      <material name="camera_clamp_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.001 0.0359 -0.0759" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/camera_clamp.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part intel_realsense_depth_camera_d435 -->
+    <visual>
+      <origin xyz="-0.01805 0.0499 0.0186" rpy="-0 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/intel_realsense_depth_camera_d435.stl"/>
+      </geometry>
+      <material name="intel_realsense_depth_camera_d435_material">
+        <color rgba="0.74902 0.74902 0.74902 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.01805 0.0499 0.0186" rpy="-0 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/intel_realsense_depth_camera_d435.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part camera_stand -->
+    <visual>
+      <origin xyz="0.0105 0.0259 0.0336" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/camera_stand.stl"/>
+      </geometry>
+      <material name="camera_stand_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0105 0.0259 0.0336" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/camera_stand.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link bearing_plate -->
+  <link name="bearing_plate">
+    <inertial>
+      <origin xyz="-0.0088202 -4.3e-11 -0.00755817" rpy="0 0 0"/>
+      <mass value="0.0255407"/>
+      <inertia ixx="6.37826e-06" ixy="0" ixz="-1.09494e-06" iyy="6.11401e-06" iyz="0" izz="9.60339e-06"/>
+    </inertial>
+    <!-- Part bearing_plate_3 -->
+    <visual>
+      <origin xyz="-0 0 -0.00265" rpy="-0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/bearing_plate.stl"/>
+      </geometry>
+      <material name="bearing_plate_3_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 0 -0.00265" rpy="-0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/bearing_plate.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part body_arm_connector -->
+    <visual>
+      <origin xyz="-0.03 -0.021 -0.00265" rpy="1.5708 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/body_arm_connector.stl"/>
+      </geometry>
+      <material name="body_arm_connector_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.03 -0.021 -0.00265" rpy="1.5708 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/body_arm_connector.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part servo_frame_3_2 -->
+    <visual>
+      <origin xyz="-0.008 0.0206 -0.00665" rpy="-3.14159 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_3.stl"/>
+      </geometry>
+      <material name="servo_frame_3_2_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.008 0.0206 -0.00665" rpy="-3.14159 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link cf35_12 -->
+  <link name="cf35_12">
+    <inertial>
+      <origin xyz="0.0466772 1.03615e-06 -0.0232219" rpy="0 0 0"/>
+      <mass value="0.167948"/>
+      <inertia ixx="4.98603e-05" ixy="5.664e-09" ixz="2.63713e-05" iyy="0.000239639" iyz="-1.0488e-08" izz="0.000220844"/>
+    </inertial>
+    <!-- Part cf35_12_2 -->
+    <visual>
+      <origin xyz="0.08846 0 -0.043925" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12__2.stl"/>
+      </geometry>
+      <material name="cf35_12_2_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.08846 0 -0.043925" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12__2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part cf35_12_3 -->
+    <visual>
+      <origin xyz="0.0255 0 -0.0092" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+      <material name="cf35_12_3_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0255 0 -0.0092" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part arm_1 -->
+    <visual>
+      <origin xyz="0.09736 -0.016625 -0.030675" rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/arm_1.stl"/>
+      </geometry>
+      <material name="arm_1_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.09736 -0.016625 -0.030675" rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/arm_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link servo_frame_1 -->
+  <link name="servo_frame_1">
+    <inertial>
+      <origin xyz="-0.000286303 0.00740657 -0.0179219" rpy="0 0 0"/>
+      <mass value="0.0776834"/>
+      <inertia ixx="2.32004e-05" ixy="-3.06074e-07" ixz="1.8065e-08" iyy="1.83619e-05" iyz="8.98984e-07" izz="2.7479e-05"/>
+    </inertial>
+    <!-- Part cf35_12_4 -->
+    <visual>
+      <origin xyz="-0.0095 -0.00555 -0.0195" rpy="-3.14159 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+      <material name="cf35_12_4_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0095 -0.00555 -0.0195" rpy="-3.14159 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part servo_frame_1_2 -->
+    <visual>
+      <origin xyz="-0.0181 0.015 0" rpy="-3.14159 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_1.stl"/>
+      </geometry>
+      <material name="servo_frame_1_2_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0181 0.015 0" rpy="-3.14159 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link arm_2 -->
+  <link name="arm_2">
+    <inertial>
+      <origin xyz="-0.036076 0.00916415 0.0187491" rpy="0 0 0"/>
+      <mass value="0.0881277"/>
+      <inertia ixx="2.9081e-05" ixy="2.0268e-06" ixz="-2.951e-09" iyy="2.88099e-05" iyz="-7.422e-09" izz="3.69552e-05"/>
+    </inertial>
+    <!-- Part cf35_12_5 -->
+    <visual>
+      <origin xyz="-0.0474039 0.0255 0.01875" rpy="-0 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12__2.stl"/>
+      </geometry>
+      <material name="cf35_12_5_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0474039 0.0255 0.01875" rpy="-0 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12__2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part arm_2 -->
+    <visual>
+      <origin xyz="-0.0563039 0.01225 0.035375" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_2.stl"/>
+      </geometry>
+      <material name="arm_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0563039 0.01225 0.035375" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link servo_frame_2 -->
+  <link name="servo_frame_2">
+    <inertial>
+      <origin xyz="0.00038221 -1.26518e-06 -0.028243" rpy="0 0 0"/>
+      <mass value="0.0764903"/>
+      <inertia ixx="2.48718e-05" ixy="2.944e-09" ixz="-3.03351e-07" iyy="3.05644e-05" iyz="-7.8e-09" izz="1.66079e-05"/>
+    </inertial>
+    <!-- Part cf35_12_6 -->
+    <visual>
+      <origin xyz="0.0096 0 -0.0167" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+      <material name="cf35_12_6_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0096 0 -0.0167" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part servo_frame_2 -->
+    <visual>
+      <origin xyz="-0.0181 0.0125 0" rpy="3.14159 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_2.stl"/>
+      </geometry>
+      <material name="servo_frame_2_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0181 0.0125 0" rpy="3.14159 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link gripper_frame -->
+  <link name="gripper_frame">
+    <inertial>
+      <origin xyz="-0.0402238 -0.00726017 0.0187509" rpy="0 0 0"/>
+      <mass value="0.111201"/>
+      <inertia ixx="3.937e-05" ixy="1.32786e-06" ixz="2.747e-09" iyy="4.74671e-05" iyz="-7.158e-09" izz="5.3707e-05"/>
+    </inertial>
+    <!-- Part cf35_12_7 -->
+    <visual>
+      <origin xyz="-0.0474039 -0.0255 0.01875" rpy="-3.14159 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+      <material name="cf35_12_7_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0474039 -0.0255 0.01875" rpy="-3.14159 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part gripper_gear -->
+    <visual>
+      <origin xyz="-0.0622539 -0 0.01875" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_gear.stl"/>
+      </geometry>
+      <material name="gripper_gear_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0622539 -0 0.01875" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_gear.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part gripper_carrier -->
+    <visual>
+      <origin xyz="-0.0573039 -0.018 -0.01125" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_carrier.stl"/>
+      </geometry>
+      <material name="gripper_carrier_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0573039 -0.018 -0.01125" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_carrier.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part gripper_frame -->
+    <visual>
+      <origin xyz="-0.0573039 -0.01225 0.002125" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_frame.stl"/>
+      </geometry>
+      <material name="gripper_frame_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0573039 -0.01225 0.002125" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_frame.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link gripper_key -->
+  <link name="gripper_key">
+    <inertial>
+      <origin xyz="-0.0253394 -0.00590355 -0.00751858" rpy="0 0 0"/>
+      <mass value="0.00872621"/>
+      <inertia ixx="7.04755e-07" ixy="-5.11786e-07" ixz="3.32136e-07" iyy="3.69163e-06" iyz="1.30446e-07" izz="3.63295e-06"/>
+    </inertial>
+    <!-- Part gripper_key -->
+    <visual>
+      <origin xyz="-0.00125 0.0065 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_key.stl"/>
+      </geometry>
+      <material name="gripper_key_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00125 0.0065 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_key.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part gripper_pad -->
+    <visual>
+      <origin xyz="-0.03575 -0.016 -0.007" rpy="3.14159 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_pad.stl"/>
+      </geometry>
+      <material name="gripper_pad_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.03575 -0.016 -0.007" rpy="3.14159 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_pad.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part gripper_finger -->
+    <visual>
+      <origin xyz="-0.01575 -0.001 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_finger.stl"/>
+      </geometry>
+      <material name="gripper_finger_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.01575 -0.001 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_finger.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link gripper_key_2 -->
+  <link name="gripper_key_2">
+    <inertial>
+      <origin xyz="-0.0253394 -0.00555706 -0.00751858" rpy="0 0 0"/>
+      <mass value="0.00872621"/>
+      <inertia ixx="6.89518e-07" ixy="-4.83702e-07" ixz="3.32136e-07" iyy="3.69163e-06" iyz="1.25272e-07" izz="3.61771e-06"/>
+    </inertial>
+    <!-- Part gripper_finger_2 -->
+    <visual>
+      <origin xyz="-0.01575 -0.0005 -0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_finger.stl"/>
+      </geometry>
+      <material name="gripper_finger_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.01575 -0.0005 -0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_finger.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part gripper_pad_2 -->
+    <visual>
+      <origin xyz="-0.06575 -0.0005 -0.007" rpy="3.14159 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_pad.stl"/>
+      </geometry>
+      <material name="gripper_pad_2_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06575 -0.0005 -0.007" rpy="3.14159 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_pad.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part gripper_key_2 -->
+    <visual>
+      <origin xyz="-0.00125 0.0065 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_key.stl"/>
+      </geometry>
+      <material name="gripper_key_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00125 0.0065 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_key.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link bearing_plate_2 -->
+  <link name="bearing_plate_2">
+    <inertial>
+      <origin xyz="-4.3e-11 0.0088202 -0.00755817" rpy="0 0 0"/>
+      <mass value="0.0255407"/>
+      <inertia ixx="6.11401e-06" ixy="-0" ixz="0" iyy="6.37826e-06" iyz="1.09494e-06" izz="9.60339e-06"/>
+    </inertial>
+    <!-- Part bearing_plate_4 -->
+    <visual>
+      <origin xyz="-0 0 -0.00265" rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/bearing_plate.stl"/>
+      </geometry>
+      <material name="bearing_plate_4_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 0 -0.00265" rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/bearing_plate.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part body_arm_connector_2 -->
+    <visual>
+      <origin xyz="-0.021 0.03 -0.00265" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/body_arm_connector.stl"/>
+      </geometry>
+      <material name="body_arm_connector_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.021 0.03 -0.00265" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/body_arm_connector.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part servo_frame_3_3 -->
+    <visual>
+      <origin xyz="-0.0206 0.029 -0.00665" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_3.stl"/>
+      </geometry>
+      <material name="servo_frame_3_3_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0206 0.029 -0.00665" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link cf35_12_2 -->
+  <link name="cf35_12_2">
+    <inertial>
+      <origin xyz="0.0466772 1.03615e-06 -0.0236571" rpy="0 0 0"/>
+      <mass value="0.167948"/>
+      <inertia ixx="5.03877e-05" ixy="5.664e-09" ixz="2.8216e-05" iyy="0.000240166" iyz="-1.0505e-08" izz="0.000220844"/>
+    </inertial>
+    <!-- Part cf35_12_8 -->
+    <visual>
+      <origin xyz="0.08846 0 -0.044675" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12__2.stl"/>
+      </geometry>
+      <material name="cf35_12_8_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.08846 0 -0.044675" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12__2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part cf35_12_9 -->
+    <visual>
+      <origin xyz="0.0255 0 -0.0092" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+      <material name="cf35_12_9_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0255 0 -0.0092" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part arm_1_2 -->
+    <visual>
+      <origin xyz="0.09736 -0.016625 -0.031425" rpy="-0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/arm_1.stl"/>
+      </geometry>
+      <material name="arm_1_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.09736 -0.016625 -0.031425" rpy="-0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/arm_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link servo_frame_1_2 -->
+  <link name="servo_frame_1_2">
+    <inertial>
+      <origin xyz="-0.000195547 -0.00844874 -0.0179244" rpy="0 0 0"/>
+      <mass value="0.0776834"/>
+      <inertia ixx="2.33339e-05" ixy="3.15874e-07" ixz="2.3296e-08" iyy="1.83631e-05" iyz="-1.04318e-06" izz="2.76124e-05"/>
+    </inertial>
+    <!-- Part cf35_12_10 -->
+    <visual>
+      <origin xyz="-0.0094 0.0044 -0.0195" rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+      <material name="cf35_12_10_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0094 0.0044 -0.0195" rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part servo_frame_1_3 -->
+    <visual>
+      <origin xyz="-0.0181 0.015 -0" rpy="-3.14159 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_1.stl"/>
+      </geometry>
+      <material name="servo_frame_1_3_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0181 0.015 -0" rpy="-3.14159 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link arm_2_2 -->
+  <link name="arm_2_2">
+    <inertial>
+      <origin xyz="-0.0355037 -0.00916415 0.0187509" rpy="0 0 0"/>
+      <mass value="0.0881277"/>
+      <inertia ixx="2.9081e-05" ixy="-1.86556e-06" ixz="2.937e-09" iyy="2.85256e-05" iyz="-7.422e-09" izz="3.66709e-05"/>
+    </inertial>
+    <!-- Part cf35_12_11 -->
+    <visual>
+      <origin xyz="-0.0466539 -0.0255 0.01875" rpy="3.14159 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12__2.stl"/>
+      </geometry>
+      <material name="cf35_12_11_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0466539 -0.0255 0.01875" rpy="3.14159 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12__2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part arm_2_2 -->
+    <visual>
+      <origin xyz="-0.0563039 -0.01225 0.002125" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_2.stl"/>
+      </geometry>
+      <material name="arm_2_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0563039 -0.01225 0.002125" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link servo_frame_2_2 -->
+  <link name="servo_frame_2_2">
+    <inertial>
+      <origin xyz="0.000290039 -1.26518e-06 -0.028243" rpy="0 0 0"/>
+      <mass value="0.0764903"/>
+      <inertia ixx="2.48718e-05" ixy="2.943e-09" ixz="-3.18631e-07" iyy="3.0565e-05" iyz="-7.8e-09" izz="1.66085e-05"/>
+    </inertial>
+    <!-- Part cf35_12_12 -->
+    <visual>
+      <origin xyz="0.0095 -0 -0.0167" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+      <material name="cf35_12_12_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0095 -0 -0.0167" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part servo_frame_2_2 -->
+    <visual>
+      <origin xyz="-0.0181 0.0125 0" rpy="3.14159 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_2.stl"/>
+      </geometry>
+      <material name="servo_frame_2_2_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0181 0.0125 0" rpy="3.14159 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/servo_frame_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link gripper_frame_2 -->
+  <link name="gripper_frame_2">
+    <inertial>
+      <origin xyz="-0.0402238 -0.00726017 0.0187509" rpy="0 0 0"/>
+      <mass value="0.111201"/>
+      <inertia ixx="3.937e-05" ixy="1.32786e-06" ixz="2.747e-09" iyy="4.74671e-05" iyz="-7.158e-09" izz="5.3707e-05"/>
+    </inertial>
+    <!-- Part gripper_carrier_2 -->
+    <visual>
+      <origin xyz="-0.0573039 -0.018 -0.01125" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_carrier.stl"/>
+      </geometry>
+      <material name="gripper_carrier_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0573039 -0.018 -0.01125" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_carrier.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part gripper_frame_2 -->
+    <visual>
+      <origin xyz="-0.0573039 -0.01225 0.002125" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_frame.stl"/>
+      </geometry>
+      <material name="gripper_frame_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0573039 -0.01225 0.002125" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_frame.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part gripper_gear_2 -->
+    <visual>
+      <origin xyz="-0.0622539 0 0.01875" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_gear.stl"/>
+      </geometry>
+      <material name="gripper_gear_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0622539 0 0.01875" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_gear.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part cf35_12_13 -->
+    <visual>
+      <origin xyz="-0.0474039 -0.0255 0.01875" rpy="-3.14159 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+      <material name="cf35_12_13_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0474039 -0.0255 0.01875" rpy="-3.14159 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/cf35_12.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link gripper_pad -->
+  <link name="gripper_pad">
+    <inertial>
+      <origin xyz="-0.0253394 -0.00555706 -0.00751858" rpy="0 0 0"/>
+      <mass value="0.00872621"/>
+      <inertia ixx="6.89518e-07" ixy="-4.83702e-07" ixz="3.32136e-07" iyy="3.69163e-06" iyz="1.25272e-07" izz="3.61771e-06"/>
+    </inertial>
+    <!-- Part gripper_pad_3 -->
+    <visual>
+      <origin xyz="-0.06575 -0.0005 -0.007" rpy="-3.14159 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_pad.stl"/>
+      </geometry>
+      <material name="gripper_pad_3_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06575 -0.0005 -0.007" rpy="-3.14159 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_pad.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part gripper_finger_3 -->
+    <visual>
+      <origin xyz="-0.01575 -0.0005 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_finger.stl"/>
+      </geometry>
+      <material name="gripper_finger_3_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.01575 -0.0005 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_finger.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part gripper_key_3 -->
+    <visual>
+      <origin xyz="-0.00125 0.0065 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_key.stl"/>
+      </geometry>
+      <material name="gripper_key_3_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00125 0.0065 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_key.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link gripper_pad_2 -->
+  <link name="gripper_pad_2">
+    <inertial>
+      <origin xyz="-0.0253394 -0.00590355 -0.00751858" rpy="0 0 0"/>
+      <mass value="0.00872621"/>
+      <inertia ixx="7.04755e-07" ixy="-5.11786e-07" ixz="3.32136e-07" iyy="3.69163e-06" iyz="1.30446e-07" izz="3.63295e-06"/>
+    </inertial>
+    <!-- Part gripper_key_4 -->
+    <visual>
+      <origin xyz="-0.00125 0.0065 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_key.stl"/>
+      </geometry>
+      <material name="gripper_key_4_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00125 0.0065 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_key.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part gripper_pad_4 -->
+    <visual>
+      <origin xyz="-0.03575 -0.016 -0.007" rpy="3.14159 0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_pad.stl"/>
+      </geometry>
+      <material name="gripper_pad_4_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.03575 -0.016 -0.007" rpy="3.14159 0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_pad.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part gripper_finger_4 -->
+    <visual>
+      <origin xyz="-0.01575 -0.001 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_finger.stl"/>
+      </geometry>
+      <material name="gripper_finger_4_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.01575 -0.001 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/gripper_finger.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  
+  <!-- Joint from servo_frame_2_2 to gripper_frame_2 -->
+  <joint name="right_6" type="revolute">
+    <origin xyz="0.01915 -0 -0.0422" rpy="0 -1.5708 0"/>
+    <parent link="servo_frame_2_2"/>
+    <child link="gripper_frame_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <!-- Joint from arm_2_2 to servo_frame_2_2 -->
+  <joint name="right_5" type="revolute">
+    <origin xyz="-0.0558539 0 0.01875" rpy="0 1.5708 0"/>
+    <parent link="arm_2_2"/>
+    <child link="servo_frame_2_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <!-- Joint from servo_frame_1_2 to arm_2_2 -->
+  <joint name="right_4" type="revolute">
+    <origin xyz="-0.0186 -0.0211 -0.0195" rpy="1.5708 -0 1.5708"/>
+    <parent link="servo_frame_1_2"/>
+    <child link="arm_2_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.0472" upper="1.5708"/>
+  </joint>
+  <!-- Joint from cf35_12_2 to servo_frame_1_2 -->
+  <joint name="right_3" type="revolute">
+    <origin xyz="0.09766 0 -0.019175" rpy="-1.5708 0 1.5708"/>
+    <parent link="cf35_12_2"/>
+    <child link="servo_frame_1_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <!-- Joint from bearing_plate_2 to cf35_12_2 -->
+  <joint name="right_2" type="revolute">
+    <origin xyz="0.0183 0.0185 -0.03255" rpy="1.5708 -0 1.5708"/>
+    <parent link="bearing_plate_2"/>
+    <child link="cf35_12_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="0.261799"/>
+  </joint>
+  <!-- Joint from aluminium_extrusion_20x20_180 to bearing_plate_2 -->
+  <joint name="right_1" type="revolute">
+    <origin xyz="-0.06435 2e-12 0.238625" rpy="-1.5708 0 -1.5708"/>
+    <parent link="aluminium_extrusion_20x20_180"/>
+    <child link="bearing_plate_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <!-- Joint from servo_frame_2 to gripper_frame -->
+  <joint name="left_6" type="revolute">
+    <origin xyz="-0.01825 0 -0.0422" rpy="-3.14159 -1.5708 0"/>
+    <parent link="servo_frame_2"/>
+    <child link="gripper_frame"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <!-- Joint from arm_2 to servo_frame_2 -->
+  <joint name="left_5" type="revolute">
+    <origin xyz="-0.0566039 -0 0.01875" rpy="0 1.5708 0"/>
+    <parent link="arm_2"/>
+    <child link="servo_frame_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <!-- Joint from servo_frame_1 to arm_2 -->
+  <joint name="left_4" type="revolute">
+    <origin xyz="-0.01915 0.01995 -0.0195" rpy="-1.5708 0 -1.5708"/>
+    <parent link="servo_frame_1"/>
+    <child link="arm_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.0472"/>
+  </joint>
+  <!-- Joint from cf35_12 to servo_frame_1 -->
+  <joint name="left_3" type="revolute">
+    <origin xyz="0.09766 0 -0.018425" rpy="1.5708 -1.1e-11 -1.5708"/>
+    <parent link="cf35_12"/>
+    <child link="servo_frame_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <!-- Joint from bearing_plate to cf35_12 -->
+  <joint name="left_2" type="revolute">
+    <origin xyz="-0.0185 -0.0183 -0.03255" rpy="-1.5708 -0 3.14159"/>
+    <parent link="bearing_plate"/>
+    <child link="cf35_12"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-0.261799" upper="1.5708"/>
+  </joint>
+  <!-- Joint from aluminium_extrusion_20x20_180 to bearing_plate -->
+  <joint name="left_1" type="revolute">
+    <origin xyz="0.06435 0 0.238625" rpy="-1.1e-11 -1.5708 0"/>
+    <parent link="aluminium_extrusion_20x20_180"/>
+    <child link="bearing_plate"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <!-- Joint from aluminium_extrusion_20x20_180 to servo_frame_3 -->
+  <joint name="camera" type="revolute">
+    <origin xyz="-0.0186 -8.1e-05 0.27225" rpy="1.5708 -0 1.5708"/>
+    <parent link="aluminium_extrusion_20x20_180"/>
+    <child link="servo_frame_3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="0" upper="1.5708"/>
+  </joint>
+  <!-- Joint from gripper_frame to gripper_key -->
+  <joint name="gripper_key_left_1" type="prismatic">
+    <origin xyz="-0.0648039 0.00825 0.04875" rpy="-0 0 -0"/>
+    <parent link="gripper_frame"/>
+    <child link="gripper_key"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-0.0197" upper="0"/>
+  </joint>
+  <!-- Joint from gripper_frame to gripper_key_2 -->
+  <joint name="gripper_key_left_2" type="prismatic">
+    <origin xyz="-0.0648039 -0.00825 -0.01125" rpy="3.14159 0 0"/>
+    <parent link="gripper_frame"/>
+    <child link="gripper_key_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-0.0197" upper="-0"/>
+    <mimic joint="gripper_key_left_1" multiplier="1.0"/>
+
+  </joint>
+  <!-- Joint from gripper_frame_2 to gripper_pad -->
+  <joint name="gripper_key_right_1" type="prismatic">
+    <origin xyz="-0.0648039 -0.00825 -0.01125" rpy="3.14159 -0 -0"/>
+    <parent link="gripper_frame_2"/>
+    <child link="gripper_pad"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-0.0197" upper="-0"/>
+  </joint>
+  <!-- Joint from gripper_frame_2 to gripper_pad_2 -->
+  <joint name="gripper_key_right_2" type="prismatic">
+    <origin xyz="-0.0648039 0.00825 0.04875" rpy="-0 -0 -0"/>
+    <parent link="gripper_frame_2"/>
+    <child link="gripper_pad_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-0.0197" upper="-0"/>
+    <mimic joint="gripper_key_right_1" multiplier="1.0"/>
+
+  </joint>
+
+
+  <!-- Frame gripper_key_right_2 (dummy link + fixed joint) -->
+  <link name="gripper_key_right_2">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_key_right_2_frame" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <parent link="gripper_pad_2"/>
+    <child link="gripper_key_right_2"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Frame gripper_key_right_1 (dummy link + fixed joint) -->
+  <link name="gripper_key_right_1">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_key_right_1_frame" type="fixed">
+    <origin xyz="0 -0 0" rpy="0 -0 0"/>
+    <parent link="gripper_pad"/>
+    <child link="gripper_key_right_1"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Frame gripper_carrier_right_1 (dummy link + fixed joint) -->
+  <link name="gripper_carrier_right_1">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_carrier_right_1_frame" type="fixed">
+    <origin xyz="-0.0648039 -0.00825 -0.01125" rpy="3.14159 -0 -0"/>
+    <parent link="gripper_frame_2"/>
+    <child link="gripper_carrier_right_1"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Frame gripper_carrier_right_2 (dummy link + fixed joint) -->
+  <link name="gripper_carrier_right_2">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_carrier_right_2_frame" type="fixed">
+    <origin xyz="-0.0648039 0.00825 0.04875" rpy="0 -0 -0"/>
+    <parent link="gripper_frame_2"/>
+    <child link="gripper_carrier_right_2"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Frame gripper_key_left_1 (dummy link + fixed joint) -->
+  <link name="gripper_key_left_1">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_key_left_1_frame" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="gripper_key_2"/>
+    <child link="gripper_key_left_1"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Frame gripper_key_left_2 (dummy link + fixed joint) -->
+  <link name="gripper_key_left_2">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_key_left_2_frame" type="fixed">
+    <origin xyz="0 -0 0" rpy="0 0 -0"/>
+    <parent link="gripper_key"/>
+    <child link="gripper_key_left_2"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Frame gripper_carrier_left_1 (dummy link + fixed joint) -->
+  <link name="gripper_carrier_left_1">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_carrier_left_1_frame" type="fixed">
+    <origin xyz="-0.0648039 -0.00825 -0.01125" rpy="3.14159 0 0"/>
+    <parent link="gripper_frame"/>
+    <child link="gripper_carrier_left_1"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Frame gripper_carrier_left_2 (dummy link + fixed joint) -->
+  <link name="gripper_carrier_left_2">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_carrier_left_2_frame" type="fixed">
+    <origin xyz="-0.0648039 0.00825 0.04875" rpy="-0 0 0"/>
+    <parent link="gripper_frame"/>
+    <child link="gripper_carrier_left_2"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+</robot>

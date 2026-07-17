@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "084b0d02184ebfc6ddea978c",
+    "documentMicroversion": "a3e15e7450c82edf4c6b3c69",
+    "documentVersion": "cefc650cc15092e563c6cea1",
+    "elementId": "5d036b5ad78cc37b3c263ab6",
+    "fullConfiguration": "default",
+    "id": "MSC+upfgjwuSEJ2lE",
+    "isStandardContent": false,
+    "name": "power_distribution_board <2>",
+    "partId": "JXv",
+    "suppressed": false,
+    "type": "Part"
+}
