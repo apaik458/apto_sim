@@ -12,10 +12,11 @@ from mani_skill.utils.building import actors
 from mani_skill.utils.registration import register_env
 from mani_skill.utils.scene_builder.table import TableSceneBuilder
 from mani_skill.utils.structs.pose import Pose
-from apto import Apto
+from transforms3d.euler import euler2quat
+from apto import Apto, AptoSimple
 
 REACHER_DOC_STRING = """**Task Description:**
-A simple task where the objective is to move the robot;s end effector close to a target that is spawned at a random position. This is also the *baseline* task to test whether a robot with manipulation
+A simple task where the objective is to move the robot's end effector close to a target that is spawned at a random position. This is also the *baseline* task to test whether a robot with manipulation
 capabilities can be simulated and trained properly. Hence there is extra code for some robots to set them up properly in this environment as well as the table scene builder.
 
 **Randomizations:**
@@ -29,18 +30,18 @@ capabilities can be simulated and trained properly. Hence there is extra code fo
 @register_env("ReacherApto-v1", max_episode_steps=50)
 class ReacherAptoEnv(BaseEnv):
 
-    SUPPORTED_ROBOTS = ["apto"]
-    agent: Union[Apto]
+    SUPPORTED_ROBOTS = ["apto, apto_simple"]
+    agent: Union[Apto, AptoSimple]
     goal_thresh = 0.025
 
-    def __init__(self, *args, robot_uids="apto", robot_init_qpos_noise=0.02, **kwargs):
+    def __init__(self, *args, robot_uids="apto_simple", robot_init_qpos_noise=0.02, **kwargs):
         self.robot_init_qpos_noise = robot_init_qpos_noise
         self.goal_thresh = 0.0125 * 1.25
-        self.max_goal_height = 0.08
+        self.max_goal_height = 0.3
         self.sensor_cam_eye_pos = [-0.27, 0, 0.4]
         self.sensor_cam_target_pos = [-0.56, 0, -0.25]
-        self.human_cam_eye_pos = [-0.1, 0.3, 0.4]
-        self.human_cam_target_pos = [-0.46, 0.0, 0.1]
+        self.human_cam_eye_pos = [0.5, 0.5, 0.6]
+        self.human_cam_target_pos = [0.0, 0.0, 0.0]
         super().__init__(*args, robot_uids=robot_uids, **kwargs)
 
     @property
@@ -58,7 +59,7 @@ class ReacherAptoEnv(BaseEnv):
         return CameraConfig("render_camera", pose, 512, 512, 1, 0.01, 100)
 
     def _load_agent(self, options: dict):
-        super()._load_agent(options, sapien.Pose(p=[-0.1, 0, 0], q=[0.7071788, 0, 0, 0.7070348]))
+        super()._load_agent(options, sapien.Pose(p=[0, 0, 0], q=euler2quat(0, 0, np.pi/2)))
 
     def _load_scene(self, options: dict):
         self.table_scene = TableSceneBuilder(
@@ -82,51 +83,49 @@ class ReacherAptoEnv(BaseEnv):
             self.table_scene.initialize(env_idx)
 
             goal_xyz = torch.zeros((b, 3))
-            goal_xyz[:, :2] = (
-                torch.rand((b, 2))
-            )
-            goal_xyz[:, 2] = torch.rand((b)) * self.max_goal_height
+            goal_xyz[:, 0] = torch.rand((b)) * 0.2 + 0.05
+            goal_xyz[:, 1] = torch.rand((b)) * 0.2 - 0.1
+            goal_xyz[:, 2] = torch.rand((b)) * self.max_goal_height + 0.01
+
             self.goal_site.set_pose(Pose.create_from_pq(goal_xyz))
 
     def _get_obs_extra(self, info: dict):
-        # in reality some people hack is_grasped into observations by checking if the gripper can close fully or not
         obs = dict(
-            tcp_pose=self.agent.tcp_pose.raw_pose,
+            tcp_pose_left=self.agent.tcp_pose_left.raw_pose,
             goal_pos=self.goal_site.pose.p,
         )
-        if "state" in self.obs_mode:
-            obs.update(
-                tcp_to_goal_pos=self.goal_site.pose.p - self.agent.tcp_pose.p,
-            )
+        # if "state" in self.obs_mode:
+        #     obs.update(tcp_to_goal_pos=self.goal_site.pose.p - self.agent.tcp_pose_left.p)
+        # print(f"Observation: {obs['tcp_pose_left'].shape}, {obs['goal_pos'].shape}") # torch.Size([8, 7]), torch.Size([8, 3])
         return obs
 
     def evaluate(self):
-        is_obj_placed = (
-            torch.linalg.norm(self.goal_site.pose.p - self.agent.tcp_pose.p, axis=1)
+        is_goal_reached = (
+            torch.linalg.norm(self.agent.tcp_pose_left.p - self.goal_site.pose.p, axis=1)
             <= self.goal_thresh
         )
         is_robot_static = self.agent.is_static(0.2)
         return {
-            "success": is_obj_placed & is_robot_static,
-            "is_obj_placed": is_obj_placed,
+            "success": is_goal_reached & is_robot_static,
+            "is_obj_placed": is_goal_reached,
             "is_robot_static": is_robot_static,
         }
 
     def compute_dense_reward(self, obs: Any, action: torch.Tensor, info: dict):
-        tcp_to_obj_dist = torch.linalg.norm(
-            self.goal_site.pose.p - self.agent.tcp_pose.p, axis=1
+        # reward = reward_distance
+        # - reward_distance: tcp distance from goal
+
+        # reward_distance
+        tcp_goal_pose = Pose.create_from_pq(
+            p=self.goal_site.pose.p + torch.tensor([-self.goal_thresh - 0.005, 0, 0], device=self.device)
         )
-        reaching_reward = 1 - torch.tanh(5 * tcp_to_obj_dist)
-        reward = reaching_reward
+        tcp_to_goal_dist = torch.linalg.norm(self.agent.tcp_pose_left.p - tcp_goal_pose.p, axis=1)
+        reward_near_weight = 1
+        reward_distance = -reward_near_weight * tcp_to_goal_dist
 
-        qvel = self.agent.robot.get_qvel()
-        static_reward = 1 - torch.tanh(5 * torch.linalg.norm(qvel, axis=1))
-        reward += static_reward * info["is_obj_placed"]
-
-        reward[info["success"]] = 5
+        reward = reward_distance
         return reward
 
-    def compute_normalized_dense_reward(
-        self, obs: Any, action: torch.Tensor, info: dict
-    ):
-        return self.compute_dense_reward(obs=obs, action=action, info=info) / 5
+    def compute_normalized_dense_reward(self, obs: Any, action: torch.Tensor, info: dict):
+        max_reward = 1.0
+        return self.compute_dense_reward(obs=obs, action=action, info=info) / max_reward

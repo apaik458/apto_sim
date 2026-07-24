@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "df4bcce58b069dca7839aa7e",
+    "documentMicroversion": "8d8c26580c04e85bc744044a",
+    "documentVersion": "5b7def661aa87031b5f9b851",
+    "elementId": "3be8db28842307738c39034b",
+    "fullConfiguration": "default",
+    "id": "M9a+BDYahZTbl6SUo",
+    "isStandardContent": false,
+    "name": "servo_driver_board <1>",
+    "partId": "SmB3F",
+    "suppressed": false,
+    "type": "Part"
+}

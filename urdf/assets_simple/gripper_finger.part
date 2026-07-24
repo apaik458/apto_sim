@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "a9f0ca4d467d5a1de7911c16",
+    "documentMicroversion": "b1a0209260763c6c1405ac70",
+    "elementId": "943c52187307a5a428d81a83",
+    "fullConfiguration": "default",
+    "id": "MxaGUaieHyaTaDmHw",
+    "isStandardContent": false,
+    "name": "gripper_finger <34>",
+    "partId": "JHD",
+    "suppressed": false,
+    "type": "Part"
+}

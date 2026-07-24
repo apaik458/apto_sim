@@ -91,7 +91,7 @@
     </collision>
     <!-- Part standoff_m2_5_6_2 -->
     <visual>
-      <origin xyz="0.014 0.0195 0.06225" rpy="-0 -0 -1.1e-11"/>
+      <origin xyz="0.014 0.0195 0.06225" rpy="0 -0 -1.1e-11"/>
       <geometry>
         <mesh filename="package://assets/standoff_m2_5_6.stl"/>
       </geometry>
@@ -100,7 +100,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.014 0.0195 0.06225" rpy="-0 -0 -1.1e-11"/>
+      <origin xyz="0.014 0.0195 0.06225" rpy="0 -0 -1.1e-11"/>
       <geometry>
         <mesh filename="package://assets/standoff_m2_5_6.stl"/>
       </geometry>
@@ -123,7 +123,7 @@
     </collision>
     <!-- Part driver_board_clamp -->
     <visual>
-      <origin xyz="0.069 0.0315 0.055652" rpy="0 0 3.14159"/>
+      <origin xyz="0.069 0.0315 0.055652" rpy="-0 0 3.14159"/>
       <geometry>
         <mesh filename="package://assets/driver_board_clamp.stl"/>
       </geometry>
@@ -132,7 +132,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.069 0.0315 0.055652" rpy="0 0 3.14159"/>
+      <origin xyz="0.069 0.0315 0.055652" rpy="-0 0 3.14159"/>
       <geometry>
         <mesh filename="package://assets/driver_board_clamp.stl"/>
       </geometry>
@@ -155,7 +155,7 @@
     </collision>
     <!-- Part standoff_m2_5_6_4 -->
     <visual>
-      <origin xyz="0.014 0.0195 0.09925" rpy="-0 -0 -1.1e-11"/>
+      <origin xyz="0.014 0.0195 0.09925" rpy="0 -0 -1.1e-11"/>
       <geometry>
         <mesh filename="package://assets/standoff_m2_5_6.stl"/>
       </geometry>
@@ -164,7 +164,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.014 0.0195 0.09925" rpy="-0 -0 -1.1e-11"/>
+      <origin xyz="0.014 0.0195 0.09925" rpy="0 -0 -1.1e-11"/>
       <geometry>
         <mesh filename="package://assets/standoff_m2_5_6.stl"/>
       </geometry>
@@ -491,7 +491,7 @@
     </collision>
     <!-- Part standoff_m2_5_6_8 -->
     <visual>
-      <origin xyz="-0.014 0.0195 0.06225" rpy="-0 -0 -1.1e-11"/>
+      <origin xyz="-0.014 0.0195 0.06225" rpy="0 -0 -1.1e-11"/>
       <geometry>
         <mesh filename="package://assets/standoff_m2_5_6.stl"/>
       </geometry>
@@ -500,7 +500,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.014 0.0195 0.06225" rpy="-0 -0 -1.1e-11"/>
+      <origin xyz="-0.014 0.0195 0.06225" rpy="0 -0 -1.1e-11"/>
       <geometry>
         <mesh filename="package://assets/standoff_m2_5_6.stl"/>
       </geometry>
@@ -578,16 +578,39 @@
       </geometry>
     </collision>
   </link>
+  <!-- Frame camera (dummy link + fixed joint) -->
+  <link name="camera">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="camera_frame" type="fixed">
+    <origin xyz="-0.01795 0.0499 0.0361" rpy="-0 -1.5708 0"/>
+    <parent link="servo_frame_3"/>
+    <child link="camera"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Joint from aluminium_extrusion_20x20_180 to servo_frame_3 -->
+  <joint name="camera" type="revolute">
+    <origin xyz="-0.0186 -8.1e-05 0.27225" rpy="1.5708 -0 1.5708"/>
+    <parent link="aluminium_extrusion_20x20_180"/>
+    <child link="servo_frame_3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="0" upper="1.5708"/>
+  </joint>
   <!-- Link bearing_plate -->
   <link name="bearing_plate">
     <inertial>
-      <origin xyz="-0.0088202 -4.3e-11 -0.00755817" rpy="0 0 0"/>
+      <origin xyz="-4.3e-11 0.0088202 -0.00755817" rpy="0 0 0"/>
       <mass value="0.0255407"/>
-      <inertia ixx="6.37826e-06" ixy="0" ixz="-1.09494e-06" iyy="6.11401e-06" iyz="0" izz="9.60339e-06"/>
+      <inertia ixx="6.11401e-06" ixy="-0" ixz="0" iyy="6.37826e-06" iyz="1.09494e-06" izz="9.60339e-06"/>
     </inertial>
     <!-- Part bearing_plate_3 -->
     <visual>
-      <origin xyz="-0 0 -0.00265" rpy="-0 -0 3.14159"/>
+      <origin xyz="0 -0 -0.00265" rpy="-0 -0 1.5708"/>
       <geometry>
         <mesh filename="package://assets/bearing_plate.stl"/>
       </geometry>
@@ -596,14 +619,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0 0 -0.00265" rpy="-0 -0 3.14159"/>
+      <origin xyz="0 -0 -0.00265" rpy="-0 -0 1.5708"/>
       <geometry>
         <mesh filename="package://assets/bearing_plate.stl"/>
       </geometry>
     </collision>
     <!-- Part body_arm_connector -->
     <visual>
-      <origin xyz="-0.03 -0.021 -0.00265" rpy="1.5708 -0 1.5708"/>
+      <origin xyz="-0.021 0.03 -0.00265" rpy="1.5708 -0 0"/>
       <geometry>
         <mesh filename="package://assets/body_arm_connector.stl"/>
       </geometry>
@@ -612,14 +635,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.03 -0.021 -0.00265" rpy="1.5708 -0 1.5708"/>
+      <origin xyz="-0.021 0.03 -0.00265" rpy="1.5708 -0 0"/>
       <geometry>
         <mesh filename="package://assets/body_arm_connector.stl"/>
       </geometry>
     </collision>
     <!-- Part servo_frame_3_2 -->
     <visual>
-      <origin xyz="-0.008 0.0206 -0.00665" rpy="-3.14159 0 -1.5708"/>
+      <origin xyz="0.0206 0.008 -0.00665" rpy="-3.14159 0 -3.14159"/>
       <geometry>
         <mesh filename="package://assets/servo_frame_3.stl"/>
       </geometry>
@@ -628,7 +651,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.008 0.0206 -0.00665" rpy="-3.14159 0 -1.5708"/>
+      <origin xyz="0.0206 0.008 -0.00665" rpy="-3.14159 0 -3.14159"/>
       <geometry>
         <mesh filename="package://assets/servo_frame_3.stl"/>
       </geometry>
@@ -659,7 +682,7 @@
     </collision>
     <!-- Part cf35_12_3 -->
     <visual>
-      <origin xyz="0.0255 0 -0.0092" rpy="1.5708 0 0"/>
+      <origin xyz="0.0255 0 -0.0092" rpy="1.5708 -0 0"/>
       <geometry>
         <mesh filename="package://assets/cf35_12.stl"/>
       </geometry>
@@ -668,7 +691,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.0255 0 -0.0092" rpy="1.5708 0 0"/>
+      <origin xyz="0.0255 0 -0.0092" rpy="1.5708 -0 0"/>
       <geometry>
         <mesh filename="package://assets/cf35_12.stl"/>
       </geometry>
@@ -699,7 +722,7 @@
     </inertial>
     <!-- Part cf35_12_4 -->
     <visual>
-      <origin xyz="-0.0095 -0.00555 -0.0195" rpy="-3.14159 -0 -1.5708"/>
+      <origin xyz="-0.0095 -0.00555 -0.0195" rpy="3.14159 0 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/cf35_12.stl"/>
       </geometry>
@@ -708,14 +731,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0095 -0.00555 -0.0195" rpy="-3.14159 -0 -1.5708"/>
+      <origin xyz="-0.0095 -0.00555 -0.0195" rpy="3.14159 0 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/cf35_12.stl"/>
       </geometry>
     </collision>
     <!-- Part servo_frame_1_2 -->
     <visual>
-      <origin xyz="-0.0181 0.015 0" rpy="-3.14159 0 0"/>
+      <origin xyz="-0.0181 0.015 0" rpy="-3.14159 -0 -0"/>
       <geometry>
         <mesh filename="package://assets/servo_frame_1.stl"/>
       </geometry>
@@ -724,7 +747,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0181 0.015 0" rpy="-3.14159 0 0"/>
+      <origin xyz="-0.0181 0.015 0" rpy="-3.14159 -0 -0"/>
       <geometry>
         <mesh filename="package://assets/servo_frame_1.stl"/>
       </geometry>
@@ -739,7 +762,7 @@
     </inertial>
     <!-- Part cf35_12_5 -->
     <visual>
-      <origin xyz="-0.0474039 0.0255 0.01875" rpy="-0 -0 1.5708"/>
+      <origin xyz="-0.0474039 0.0255 0.01875" rpy="0 0 1.5708"/>
       <geometry>
         <mesh filename="package://assets/cf35_12__2.stl"/>
       </geometry>
@@ -748,7 +771,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0474039 0.0255 0.01875" rpy="-0 -0 1.5708"/>
+      <origin xyz="-0.0474039 0.0255 0.01875" rpy="0 0 1.5708"/>
       <geometry>
         <mesh filename="package://assets/cf35_12__2.stl"/>
       </geometry>
@@ -795,7 +818,7 @@
     </collision>
     <!-- Part servo_frame_2 -->
     <visual>
-      <origin xyz="-0.0181 0.0125 0" rpy="3.14159 0 0"/>
+      <origin xyz="-0.0181 0.0125 0" rpy="3.14159 -0 0"/>
       <geometry>
         <mesh filename="package://assets/servo_frame_2.stl"/>
       </geometry>
@@ -804,7 +827,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0181 0.0125 0" rpy="3.14159 0 0"/>
+      <origin xyz="-0.0181 0.0125 0" rpy="3.14159 -0 0"/>
       <geometry>
         <mesh filename="package://assets/servo_frame_2.stl"/>
       </geometry>
@@ -813,13 +836,13 @@
   <!-- Link gripper_frame -->
   <link name="gripper_frame">
     <inertial>
-      <origin xyz="-0.0402238 -0.00726017 0.0187509" rpy="0 0 0"/>
+      <origin xyz="-0.0402238 0.00726017 0.0187491" rpy="0 0 0"/>
       <mass value="0.111201"/>
-      <inertia ixx="3.937e-05" ixy="1.32786e-06" ixz="2.747e-09" iyy="4.74671e-05" iyz="-7.158e-09" izz="5.3707e-05"/>
+      <inertia ixx="3.937e-05" ixy="-1.32786e-06" ixz="-2.747e-09" iyy="4.74671e-05" iyz="-7.158e-09" izz="5.3707e-05"/>
     </inertial>
     <!-- Part cf35_12_7 -->
     <visual>
-      <origin xyz="-0.0474039 -0.0255 0.01875" rpy="-3.14159 -0 -1.5708"/>
+      <origin xyz="-0.0474039 0.0255 0.01875" rpy="0 -0 1.5708"/>
       <geometry>
         <mesh filename="package://assets/cf35_12.stl"/>
       </geometry>
@@ -828,14 +851,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0474039 -0.0255 0.01875" rpy="-3.14159 -0 -1.5708"/>
+      <origin xyz="-0.0474039 0.0255 0.01875" rpy="0 -0 1.5708"/>
       <geometry>
         <mesh filename="package://assets/cf35_12.stl"/>
       </geometry>
     </collision>
     <!-- Part gripper_gear -->
     <visual>
-      <origin xyz="-0.0622539 -0 0.01875" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="-0.0622539 0 0.01875" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_gear.stl"/>
       </geometry>
@@ -844,14 +867,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0622539 -0 0.01875" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="-0.0622539 0 0.01875" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_gear.stl"/>
       </geometry>
     </collision>
     <!-- Part gripper_carrier -->
     <visual>
-      <origin xyz="-0.0573039 -0.018 -0.01125" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="-0.0573039 0.018 0.04875" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_carrier.stl"/>
       </geometry>
@@ -860,14 +883,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0573039 -0.018 -0.01125" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="-0.0573039 0.018 0.04875" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_carrier.stl"/>
       </geometry>
     </collision>
     <!-- Part gripper_frame -->
     <visual>
-      <origin xyz="-0.0573039 -0.01225 0.002125" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="-0.0573039 0.01225 0.035375" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_frame.stl"/>
       </geometry>
@@ -876,12 +899,57 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0573039 -0.01225 0.002125" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="-0.0573039 0.01225 0.035375" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_frame.stl"/>
       </geometry>
     </collision>
   </link>
+  <!-- Frame gripper_carrier_left_1 (dummy link + fixed joint) -->
+  <link name="gripper_carrier_left_1">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_carrier_left_1_frame" type="fixed">
+    <origin xyz="-0.0648039 0.00825 0.02905" rpy="-0 -0 0"/>
+    <parent link="gripper_frame"/>
+    <child link="gripper_carrier_left_1"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Frame gripper_carrier_left_2 (dummy link + fixed joint) -->
+  <link name="gripper_carrier_left_2">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_carrier_left_2_frame" type="fixed">
+    <origin xyz="-0.0648039 -0.00825 0.00845" rpy="3.14159 -0 0"/>
+    <parent link="gripper_frame"/>
+    <child link="gripper_carrier_left_2"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Frame tcp_left (dummy link + fixed joint) -->
+  <link name="tcp_left">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="tcp_left_frame" type="fixed">
+    <origin xyz="-0.130554 0 0.01875" rpy="3.14159 1.5708 0"/>
+    <parent link="gripper_frame"/>
+    <child link="tcp_left"/>
+    <axis xyz="0 0 0"/>
+  </joint>
   <!-- Link gripper_key -->
   <link name="gripper_key">
     <inertial>
@@ -923,7 +991,7 @@
     </collision>
     <!-- Part gripper_finger -->
     <visual>
-      <origin xyz="-0.01575 -0.001 0" rpy="1.5708 1.5708 0"/>
+      <origin xyz="-0.01575 -0.001 -0" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_finger.stl"/>
       </geometry>
@@ -932,12 +1000,36 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.01575 -0.001 0" rpy="1.5708 1.5708 0"/>
+      <origin xyz="-0.01575 -0.001 -0" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_finger.stl"/>
       </geometry>
     </collision>
   </link>
+  <!-- Frame gripper_key_left_2 (dummy link + fixed joint) -->
+  <link name="gripper_key_left_2">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_key_left_2_frame" type="fixed">
+    <origin xyz="-0 0 0" rpy="-0 -0 0"/>
+    <parent link="gripper_key"/>
+    <child link="gripper_key_left_2"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Joint from gripper_frame to gripper_key -->
+  <joint name="gripper_key_left_1" type="prismatic">
+    <origin xyz="-0.0648039 -0.00825 0.00845" rpy="3.14159 -0 0"/>
+    <parent link="gripper_frame"/>
+    <child link="gripper_key"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-0" upper="0.0197"/>
+    <mimic joint="gripper_key_left_2" multiplier="1.0"/>
+  </joint>
   <!-- Link gripper_key_2 -->
   <link name="gripper_key_2">
     <inertial>
@@ -947,7 +1039,7 @@
     </inertial>
     <!-- Part gripper_finger_2 -->
     <visual>
-      <origin xyz="-0.01575 -0.0005 -0" rpy="1.5708 1.5708 0"/>
+      <origin xyz="-0.01575 -0.0005 0" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_finger.stl"/>
       </geometry>
@@ -956,14 +1048,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.01575 -0.0005 -0" rpy="1.5708 1.5708 0"/>
+      <origin xyz="-0.01575 -0.0005 0" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_finger.stl"/>
       </geometry>
     </collision>
     <!-- Part gripper_pad_2 -->
     <visual>
-      <origin xyz="-0.06575 -0.0005 -0.007" rpy="3.14159 0 -0"/>
+      <origin xyz="-0.06575 -0.0005 -0.007" rpy="-3.14159 0 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_pad.stl"/>
       </geometry>
@@ -972,14 +1064,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.06575 -0.0005 -0.007" rpy="3.14159 0 -0"/>
+      <origin xyz="-0.06575 -0.0005 -0.007" rpy="-3.14159 0 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_pad.stl"/>
       </geometry>
     </collision>
     <!-- Part gripper_key_2 -->
     <visual>
-      <origin xyz="-0.00125 0.0065 0" rpy="1.5708 1.5708 0"/>
+      <origin xyz="-0.00125 0.0065 -0" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_key.stl"/>
       </geometry>
@@ -988,22 +1080,93 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.00125 0.0065 0" rpy="1.5708 1.5708 0"/>
+      <origin xyz="-0.00125 0.0065 -0" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_key.stl"/>
       </geometry>
     </collision>
   </link>
+  <!-- Frame gripper_key_left_1 (dummy link + fixed joint) -->
+  <link name="gripper_key_left_1">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_key_left_1_frame" type="fixed">
+    <origin xyz="0 0 -0" rpy="-0 0 -0"/>
+    <parent link="gripper_key_2"/>
+    <child link="gripper_key_left_1"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Joint from gripper_frame to gripper_key_2 -->
+  <joint name="gripper_key_left_2" type="prismatic">
+    <origin xyz="-0.0648039 0.00825 0.02905" rpy="-0 -0 0"/>
+    <parent link="gripper_frame"/>
+    <child link="gripper_key_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="0" upper="0.0197"/>
+  </joint>
+  <!-- Joint from servo_frame_2 to gripper_frame -->
+  <joint name="left_6" type="revolute">
+    <origin xyz="0.01925 0 -0.0422" rpy="0 -1.5708 0"/>
+    <parent link="servo_frame_2"/>
+    <child link="gripper_frame"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <!-- Joint from arm_2 to servo_frame_2 -->
+  <joint name="left_5" type="revolute">
+    <origin xyz="-0.0566039 -0 0.01875" rpy="-0 1.5708 0"/>
+    <parent link="arm_2"/>
+    <child link="servo_frame_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <!-- Joint from servo_frame_1 to arm_2 -->
+  <joint name="left_4" type="revolute">
+    <origin xyz="-0.01915 0.01995 -0.0195" rpy="-1.5708 -0 -1.5708"/>
+    <parent link="servo_frame_1"/>
+    <child link="arm_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.0472"/>
+  </joint>
+  <!-- Joint from cf35_12 to servo_frame_1 -->
+  <joint name="left_3" type="revolute">
+    <origin xyz="0.09766 0 -0.018425" rpy="1.5708 -0 -1.5708"/>
+    <parent link="cf35_12"/>
+    <child link="servo_frame_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
+  </joint>
+  <!-- Joint from bearing_plate to cf35_12 -->
+  <joint name="left_2" type="revolute">
+    <origin xyz="-0.0183 0.0185 -0.03255" rpy="-1.5708 0 1.5708"/>
+    <parent link="bearing_plate"/>
+    <child link="cf35_12"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-0.261799" upper="1.5708"/>
+  </joint>
+  <!-- Joint from aluminium_extrusion_20x20_180 to bearing_plate -->
+  <joint name="left_1" type="revolute">
+    <origin xyz="0.06435 0 0.238625" rpy="-1.5708 0 1.5708"/>
+    <parent link="aluminium_extrusion_20x20_180"/>
+    <child link="bearing_plate"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
+  </joint>
   <!-- Link bearing_plate_2 -->
   <link name="bearing_plate_2">
     <inertial>
-      <origin xyz="-4.3e-11 0.0088202 -0.00755817" rpy="0 0 0"/>
+      <origin xyz="-4.3e-11 -0.0088202 0.00755817" rpy="0 0 0"/>
       <mass value="0.0255407"/>
-      <inertia ixx="6.11401e-06" ixy="-0" ixz="0" iyy="6.37826e-06" iyz="1.09494e-06" izz="9.60339e-06"/>
+      <inertia ixx="6.11401e-06" ixy="0" ixz="-0" iyy="6.37826e-06" iyz="1.09494e-06" izz="9.60339e-06"/>
     </inertial>
     <!-- Part bearing_plate_4 -->
     <visual>
-      <origin xyz="-0 0 -0.00265" rpy="0 0 1.5708"/>
+      <origin xyz="0 0 0.00265" rpy="3.14159 0 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/bearing_plate.stl"/>
       </geometry>
@@ -1012,14 +1175,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0 0 -0.00265" rpy="0 0 1.5708"/>
+      <origin xyz="0 0 0.00265" rpy="3.14159 0 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/bearing_plate.stl"/>
       </geometry>
     </collision>
     <!-- Part body_arm_connector_2 -->
     <visual>
-      <origin xyz="-0.021 0.03 -0.00265" rpy="1.5708 0 0"/>
+      <origin xyz="-0.021 -0.03 0.00265" rpy="-1.5708 0 0"/>
       <geometry>
         <mesh filename="package://assets/body_arm_connector.stl"/>
       </geometry>
@@ -1028,14 +1191,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.021 0.03 -0.00265" rpy="1.5708 0 0"/>
+      <origin xyz="-0.021 -0.03 0.00265" rpy="-1.5708 0 0"/>
       <geometry>
         <mesh filename="package://assets/body_arm_connector.stl"/>
       </geometry>
     </collision>
     <!-- Part servo_frame_3_3 -->
     <visual>
-      <origin xyz="-0.0206 0.029 -0.00665" rpy="3.14159 -0 0"/>
+      <origin xyz="-0.0206 -0.029 0.00665" rpy="-0 -0 0"/>
       <geometry>
         <mesh filename="package://assets/servo_frame_3.stl"/>
       </geometry>
@@ -1044,7 +1207,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0206 0.029 -0.00665" rpy="3.14159 -0 0"/>
+      <origin xyz="-0.0206 -0.029 0.00665" rpy="-0 -0 0"/>
       <geometry>
         <mesh filename="package://assets/servo_frame_3.stl"/>
       </geometry>
@@ -1053,13 +1216,13 @@
   <!-- Link cf35_12_2 -->
   <link name="cf35_12_2">
     <inertial>
-      <origin xyz="0.0466772 1.03615e-06 -0.0236571" rpy="0 0 0"/>
+      <origin xyz="0.0466772 -1.03615e-06 0.0236571" rpy="0 0 0"/>
       <mass value="0.167948"/>
-      <inertia ixx="5.03877e-05" ixy="5.664e-09" ixz="2.8216e-05" iyy="0.000240166" iyz="-1.0505e-08" izz="0.000220844"/>
+      <inertia ixx="5.03877e-05" ixy="-5.664e-09" ixz="-2.8216e-05" iyy="0.000240166" iyz="-1.0505e-08" izz="0.000220844"/>
     </inertial>
     <!-- Part cf35_12_8 -->
     <visual>
-      <origin xyz="0.08846 0 -0.044675" rpy="1.5708 1.5708 0"/>
+      <origin xyz="0.08846 0 0.044675" rpy="-1.5708 -1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/cf35_12__2.stl"/>
       </geometry>
@@ -1068,14 +1231,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.08846 0 -0.044675" rpy="1.5708 1.5708 0"/>
+      <origin xyz="0.08846 0 0.044675" rpy="-1.5708 -1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/cf35_12__2.stl"/>
       </geometry>
     </collision>
     <!-- Part cf35_12_9 -->
     <visual>
-      <origin xyz="0.0255 0 -0.0092" rpy="1.5708 -0 -0"/>
+      <origin xyz="0.0255 0 0.0092" rpy="-1.5708 -0 0"/>
       <geometry>
         <mesh filename="package://assets/cf35_12.stl"/>
       </geometry>
@@ -1084,14 +1247,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.0255 0 -0.0092" rpy="1.5708 -0 -0"/>
+      <origin xyz="0.0255 0 0.0092" rpy="-1.5708 -0 0"/>
       <geometry>
         <mesh filename="package://assets/cf35_12.stl"/>
       </geometry>
     </collision>
     <!-- Part arm_1_2 -->
     <visual>
-      <origin xyz="0.09736 -0.016625 -0.031425" rpy="-0 0 1.5708"/>
+      <origin xyz="0.09736 0.016625 0.031425" rpy="-3.14159 -0 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/arm_1.stl"/>
       </geometry>
@@ -1100,7 +1263,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.09736 -0.016625 -0.031425" rpy="-0 0 1.5708"/>
+      <origin xyz="0.09736 0.016625 0.031425" rpy="-3.14159 -0 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/arm_1.stl"/>
       </geometry>
@@ -1109,13 +1272,13 @@
   <!-- Link servo_frame_1_2 -->
   <link name="servo_frame_1_2">
     <inertial>
-      <origin xyz="-0.000195547 -0.00844874 -0.0179244" rpy="0 0 0"/>
+      <origin xyz="-0.000195547 0.00844874 0.0179244" rpy="0 0 0"/>
       <mass value="0.0776834"/>
-      <inertia ixx="2.33339e-05" ixy="3.15874e-07" ixz="2.3296e-08" iyy="1.83631e-05" iyz="-1.04318e-06" izz="2.76124e-05"/>
+      <inertia ixx="2.33339e-05" ixy="-3.15874e-07" ixz="-2.3296e-08" iyy="1.83631e-05" iyz="-1.04318e-06" izz="2.76124e-05"/>
     </inertial>
     <!-- Part cf35_12_10 -->
     <visual>
-      <origin xyz="-0.0094 0.0044 -0.0195" rpy="0 0 1.5708"/>
+      <origin xyz="-0.0094 -0.0044 0.0195" rpy="-3.14159 0 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/cf35_12.stl"/>
       </geometry>
@@ -1124,14 +1287,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0094 0.0044 -0.0195" rpy="0 0 1.5708"/>
+      <origin xyz="-0.0094 -0.0044 0.0195" rpy="-3.14159 0 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/cf35_12.stl"/>
       </geometry>
     </collision>
     <!-- Part servo_frame_1_3 -->
     <visual>
-      <origin xyz="-0.0181 0.015 -0" rpy="-3.14159 0 -0"/>
+      <origin xyz="-0.0181 -0.015 0" rpy="0 -0 -0"/>
       <geometry>
         <mesh filename="package://assets/servo_frame_1.stl"/>
       </geometry>
@@ -1140,7 +1303,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0181 0.015 -0" rpy="-3.14159 0 -0"/>
+      <origin xyz="-0.0181 -0.015 0" rpy="0 -0 -0"/>
       <geometry>
         <mesh filename="package://assets/servo_frame_1.stl"/>
       </geometry>
@@ -1149,13 +1312,13 @@
   <!-- Link arm_2_2 -->
   <link name="arm_2_2">
     <inertial>
-      <origin xyz="-0.0355037 -0.00916415 0.0187509" rpy="0 0 0"/>
+      <origin xyz="-0.036076 0.00916415 -0.0187509" rpy="0 0 0"/>
       <mass value="0.0881277"/>
-      <inertia ixx="2.9081e-05" ixy="-1.86556e-06" ixz="2.937e-09" iyy="2.85256e-05" iyz="-7.422e-09" izz="3.66709e-05"/>
+      <inertia ixx="2.9081e-05" ixy="2.0268e-06" ixz="-2.951e-09" iyy="2.88099e-05" iyz="-7.422e-09" izz="3.69552e-05"/>
     </inertial>
     <!-- Part cf35_12_11 -->
     <visual>
-      <origin xyz="-0.0466539 -0.0255 0.01875" rpy="3.14159 0 -1.5708"/>
+      <origin xyz="-0.0474039 0.0255 -0.01875" rpy="0 0 1.5708"/>
       <geometry>
         <mesh filename="package://assets/cf35_12__2.stl"/>
       </geometry>
@@ -1164,14 +1327,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0466539 -0.0255 0.01875" rpy="3.14159 0 -1.5708"/>
+      <origin xyz="-0.0474039 0.0255 -0.01875" rpy="0 0 1.5708"/>
       <geometry>
         <mesh filename="package://assets/cf35_12__2.stl"/>
       </geometry>
     </collision>
     <!-- Part arm_2_2 -->
     <visual>
-      <origin xyz="-0.0563039 -0.01225 0.002125" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="-0.0563039 0.01225 -0.002125" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/arm_2.stl"/>
       </geometry>
@@ -1180,7 +1343,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0563039 -0.01225 0.002125" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="-0.0563039 0.01225 -0.002125" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/arm_2.stl"/>
       </geometry>
@@ -1189,13 +1352,13 @@
   <!-- Link servo_frame_2_2 -->
   <link name="servo_frame_2_2">
     <inertial>
-      <origin xyz="0.000290039 -1.26518e-06 -0.028243" rpy="0 0 0"/>
+      <origin xyz="0.000290039 1.26518e-06 0.028243" rpy="0 0 0"/>
       <mass value="0.0764903"/>
-      <inertia ixx="2.48718e-05" ixy="2.943e-09" ixz="-3.18631e-07" iyy="3.0565e-05" iyz="-7.8e-09" izz="1.66085e-05"/>
+      <inertia ixx="2.48718e-05" ixy="-2.943e-09" ixz="3.18631e-07" iyy="3.0565e-05" iyz="-7.8e-09" izz="1.66085e-05"/>
     </inertial>
     <!-- Part cf35_12_12 -->
     <visual>
-      <origin xyz="0.0095 -0 -0.0167" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="0.0095 -0 0.0167" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/cf35_12.stl"/>
       </geometry>
@@ -1204,14 +1367,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.0095 -0 -0.0167" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="0.0095 -0 0.0167" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/cf35_12.stl"/>
       </geometry>
     </collision>
     <!-- Part servo_frame_2_2 -->
     <visual>
-      <origin xyz="-0.0181 0.0125 0" rpy="3.14159 0 0"/>
+      <origin xyz="-0.0181 -0.0125 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://assets/servo_frame_2.stl"/>
       </geometry>
@@ -1220,7 +1383,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0181 0.0125 0" rpy="3.14159 0 0"/>
+      <origin xyz="-0.0181 -0.0125 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://assets/servo_frame_2.stl"/>
       </geometry>
@@ -1229,13 +1392,13 @@
   <!-- Link gripper_frame_2 -->
   <link name="gripper_frame_2">
     <inertial>
-      <origin xyz="-0.0402238 -0.00726017 0.0187509" rpy="0 0 0"/>
+      <origin xyz="-0.0402238 0.00726017 -0.0187509" rpy="0 0 0"/>
       <mass value="0.111201"/>
-      <inertia ixx="3.937e-05" ixy="1.32786e-06" ixz="2.747e-09" iyy="4.74671e-05" iyz="-7.158e-09" izz="5.3707e-05"/>
+      <inertia ixx="3.937e-05" ixy="-1.32786e-06" ixz="-2.747e-09" iyy="4.74671e-05" iyz="-7.158e-09" izz="5.3707e-05"/>
     </inertial>
     <!-- Part gripper_carrier_2 -->
     <visual>
-      <origin xyz="-0.0573039 -0.018 -0.01125" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="-0.0573039 0.018 0.01125" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_carrier.stl"/>
       </geometry>
@@ -1244,14 +1407,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0573039 -0.018 -0.01125" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="-0.0573039 0.018 0.01125" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_carrier.stl"/>
       </geometry>
     </collision>
     <!-- Part gripper_frame_2 -->
     <visual>
-      <origin xyz="-0.0573039 -0.01225 0.002125" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="-0.0573039 0.01225 -0.002125" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_frame.stl"/>
       </geometry>
@@ -1260,14 +1423,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0573039 -0.01225 0.002125" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="-0.0573039 0.01225 -0.002125" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_frame.stl"/>
       </geometry>
     </collision>
     <!-- Part gripper_gear_2 -->
     <visual>
-      <origin xyz="-0.0622539 0 0.01875" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="-0.0622539 0 -0.01875" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_gear.stl"/>
       </geometry>
@@ -1276,14 +1439,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0622539 0 0.01875" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="-0.0622539 0 -0.01875" rpy="1.5708 1.5708 0"/>
       <geometry>
         <mesh filename="package://assets/gripper_gear.stl"/>
       </geometry>
     </collision>
     <!-- Part cf35_12_13 -->
     <visual>
-      <origin xyz="-0.0474039 -0.0255 0.01875" rpy="-3.14159 0 -1.5708"/>
+      <origin xyz="-0.0474039 0.0255 -0.01875" rpy="0 -0 1.5708"/>
       <geometry>
         <mesh filename="package://assets/cf35_12.stl"/>
       </geometry>
@@ -1292,12 +1455,57 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.0474039 -0.0255 0.01875" rpy="-3.14159 0 -1.5708"/>
+      <origin xyz="-0.0474039 0.0255 -0.01875" rpy="0 -0 1.5708"/>
       <geometry>
         <mesh filename="package://assets/cf35_12.stl"/>
       </geometry>
     </collision>
   </link>
+  <!-- Frame gripper_carrier_right_1 (dummy link + fixed joint) -->
+  <link name="gripper_carrier_right_1">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_carrier_right_1_frame" type="fixed">
+    <origin xyz="-0.0648039 0.00825 -0.00845" rpy="0 0 -0"/>
+    <parent link="gripper_frame_2"/>
+    <child link="gripper_carrier_right_1"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Frame gripper_carrier_right_2 (dummy link + fixed joint) -->
+  <link name="gripper_carrier_right_2">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_carrier_right_2_frame" type="fixed">
+    <origin xyz="-0.0648039 -0.00825 -0.02905" rpy="-3.14159 0 -0"/>
+    <parent link="gripper_frame_2"/>
+    <child link="gripper_carrier_right_2"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Frame tcp_right (dummy link + fixed joint) -->
+  <link name="tcp_right">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="tcp_right_frame" type="fixed">
+    <origin xyz="-0.130554 0 -0.01875" rpy="3.14159 1.5708 0"/>
+    <parent link="gripper_frame_2"/>
+    <child link="tcp_right"/>
+    <axis xyz="0 0 0"/>
+  </joint>
   <!-- Link gripper_pad -->
   <link name="gripper_pad">
     <inertial>
@@ -1307,7 +1515,7 @@
     </inertial>
     <!-- Part gripper_pad_3 -->
     <visual>
-      <origin xyz="-0.06575 -0.0005 -0.007" rpy="-3.14159 0 0"/>
+      <origin xyz="-0.06575 -0.0005 -0.007" rpy="-3.14159 0 -0"/>
       <geometry>
         <mesh filename="package://assets/gripper_pad.stl"/>
       </geometry>
@@ -1316,7 +1524,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.06575 -0.0005 -0.007" rpy="-3.14159 0 0"/>
+      <origin xyz="-0.06575 -0.0005 -0.007" rpy="-3.14159 0 -0"/>
       <geometry>
         <mesh filename="package://assets/gripper_pad.stl"/>
       </geometry>
@@ -1354,6 +1562,30 @@
       </geometry>
     </collision>
   </link>
+  <!-- Frame gripper_key_right_1 (dummy link + fixed joint) -->
+  <link name="gripper_key_right_1">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="gripper_key_right_1_frame" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="gripper_pad"/>
+    <child link="gripper_key_right_1"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Joint from gripper_frame_2 to gripper_pad -->
+  <joint name="gripper_key_right_1" type="prismatic">
+    <origin xyz="-0.0648039 0.00825 -0.00845" rpy="0 0 0"/>
+    <parent link="gripper_frame_2"/>
+    <child link="gripper_pad"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-0" upper="0.0197"/>
+    <mimic joint="gripper_key_right_2" multiplier="1.0"/>
+  </joint>
   <!-- Link gripper_pad_2 -->
   <link name="gripper_pad_2">
     <inertial>
@@ -1410,150 +1642,6 @@
       </geometry>
     </collision>
   </link>
-
-  
-  <!-- Joint from servo_frame_2_2 to gripper_frame_2 -->
-  <joint name="right_6" type="revolute">
-    <origin xyz="0.01915 -0 -0.0422" rpy="0 -1.5708 0"/>
-    <parent link="servo_frame_2_2"/>
-    <child link="gripper_frame_2"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
-  </joint>
-  <!-- Joint from arm_2_2 to servo_frame_2_2 -->
-  <joint name="right_5" type="revolute">
-    <origin xyz="-0.0558539 0 0.01875" rpy="0 1.5708 0"/>
-    <parent link="arm_2_2"/>
-    <child link="servo_frame_2_2"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
-  </joint>
-  <!-- Joint from servo_frame_1_2 to arm_2_2 -->
-  <joint name="right_4" type="revolute">
-    <origin xyz="-0.0186 -0.0211 -0.0195" rpy="1.5708 -0 1.5708"/>
-    <parent link="servo_frame_1_2"/>
-    <child link="arm_2_2"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-1.0472" upper="1.5708"/>
-  </joint>
-  <!-- Joint from cf35_12_2 to servo_frame_1_2 -->
-  <joint name="right_3" type="revolute">
-    <origin xyz="0.09766 0 -0.019175" rpy="-1.5708 0 1.5708"/>
-    <parent link="cf35_12_2"/>
-    <child link="servo_frame_1_2"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
-  </joint>
-  <!-- Joint from bearing_plate_2 to cf35_12_2 -->
-  <joint name="right_2" type="revolute">
-    <origin xyz="0.0183 0.0185 -0.03255" rpy="1.5708 -0 1.5708"/>
-    <parent link="bearing_plate_2"/>
-    <child link="cf35_12_2"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-1.5708" upper="0.261799"/>
-  </joint>
-  <!-- Joint from aluminium_extrusion_20x20_180 to bearing_plate_2 -->
-  <joint name="right_1" type="revolute">
-    <origin xyz="-0.06435 2e-12 0.238625" rpy="-1.5708 0 -1.5708"/>
-    <parent link="aluminium_extrusion_20x20_180"/>
-    <child link="bearing_plate_2"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
-  </joint>
-  <!-- Joint from servo_frame_2 to gripper_frame -->
-  <joint name="left_6" type="revolute">
-    <origin xyz="-0.01825 0 -0.0422" rpy="-3.14159 -1.5708 0"/>
-    <parent link="servo_frame_2"/>
-    <child link="gripper_frame"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
-  </joint>
-  <!-- Joint from arm_2 to servo_frame_2 -->
-  <joint name="left_5" type="revolute">
-    <origin xyz="-0.0566039 -0 0.01875" rpy="0 1.5708 0"/>
-    <parent link="arm_2"/>
-    <child link="servo_frame_2"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
-  </joint>
-  <!-- Joint from servo_frame_1 to arm_2 -->
-  <joint name="left_4" type="revolute">
-    <origin xyz="-0.01915 0.01995 -0.0195" rpy="-1.5708 0 -1.5708"/>
-    <parent link="servo_frame_1"/>
-    <child link="arm_2"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-1.5708" upper="1.0472"/>
-  </joint>
-  <!-- Joint from cf35_12 to servo_frame_1 -->
-  <joint name="left_3" type="revolute">
-    <origin xyz="0.09766 0 -0.018425" rpy="1.5708 -1.1e-11 -1.5708"/>
-    <parent link="cf35_12"/>
-    <child link="servo_frame_1"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
-  </joint>
-  <!-- Joint from bearing_plate to cf35_12 -->
-  <joint name="left_2" type="revolute">
-    <origin xyz="-0.0185 -0.0183 -0.03255" rpy="-1.5708 -0 3.14159"/>
-    <parent link="bearing_plate"/>
-    <child link="cf35_12"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-0.261799" upper="1.5708"/>
-  </joint>
-  <!-- Joint from aluminium_extrusion_20x20_180 to bearing_plate -->
-  <joint name="left_1" type="revolute">
-    <origin xyz="0.06435 0 0.238625" rpy="-1.1e-11 -1.5708 0"/>
-    <parent link="aluminium_extrusion_20x20_180"/>
-    <child link="bearing_plate"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
-  </joint>
-  <!-- Joint from aluminium_extrusion_20x20_180 to servo_frame_3 -->
-  <joint name="camera" type="revolute">
-    <origin xyz="-0.0186 -8.1e-05 0.27225" rpy="1.5708 -0 1.5708"/>
-    <parent link="aluminium_extrusion_20x20_180"/>
-    <child link="servo_frame_3"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="0" upper="1.5708"/>
-  </joint>
-  <!-- Joint from gripper_frame to gripper_key -->
-  <joint name="gripper_key_left_1" type="prismatic">
-    <origin xyz="-0.0648039 0.00825 0.04875" rpy="-0 0 -0"/>
-    <parent link="gripper_frame"/>
-    <child link="gripper_key"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-0.0197" upper="0"/>
-  </joint>
-  <!-- Joint from gripper_frame to gripper_key_2 -->
-  <joint name="gripper_key_left_2" type="prismatic">
-    <origin xyz="-0.0648039 -0.00825 -0.01125" rpy="3.14159 0 0"/>
-    <parent link="gripper_frame"/>
-    <child link="gripper_key_2"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-0.0197" upper="-0"/>
-    <mimic joint="gripper_key_left_1" multiplier="1.0"/>
-
-  </joint>
-  <!-- Joint from gripper_frame_2 to gripper_pad -->
-  <joint name="gripper_key_right_1" type="prismatic">
-    <origin xyz="-0.0648039 -0.00825 -0.01125" rpy="3.14159 -0 -0"/>
-    <parent link="gripper_frame_2"/>
-    <child link="gripper_pad"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-0.0197" upper="-0"/>
-  </joint>
-  <!-- Joint from gripper_frame_2 to gripper_pad_2 -->
-  <joint name="gripper_key_right_2" type="prismatic">
-    <origin xyz="-0.0648039 0.00825 0.04875" rpy="-0 -0 -0"/>
-    <parent link="gripper_frame_2"/>
-    <child link="gripper_pad_2"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-0.0197" upper="-0"/>
-    <mimic joint="gripper_key_right_1" multiplier="1.0"/>
-
-  </joint>
-
-
   <!-- Frame gripper_key_right_2 (dummy link + fixed joint) -->
   <link name="gripper_key_right_2">
     <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1564,114 +1652,65 @@
     </inertial>
   </link>
   <joint name="gripper_key_right_2_frame" type="fixed">
-    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="gripper_pad_2"/>
     <child link="gripper_key_right_2"/>
     <axis xyz="0 0 0"/>
   </joint>
-  <!-- Frame gripper_key_right_1 (dummy link + fixed joint) -->
-  <link name="gripper_key_right_1">
-    <origin xyz="0 0 0" rpy="0 -0 0"/>
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="1e-9"/>
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
-    </inertial>
-  </link>
-  <joint name="gripper_key_right_1_frame" type="fixed">
-    <origin xyz="0 -0 0" rpy="0 -0 0"/>
-    <parent link="gripper_pad"/>
-    <child link="gripper_key_right_1"/>
-    <axis xyz="0 0 0"/>
-  </joint>
-  <!-- Frame gripper_carrier_right_1 (dummy link + fixed joint) -->
-  <link name="gripper_carrier_right_1">
-    <origin xyz="0 0 0" rpy="0 -0 0"/>
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="1e-9"/>
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
-    </inertial>
-  </link>
-  <joint name="gripper_carrier_right_1_frame" type="fixed">
-    <origin xyz="-0.0648039 -0.00825 -0.01125" rpy="3.14159 -0 -0"/>
+  <!-- Joint from gripper_frame_2 to gripper_pad_2 -->
+  <joint name="gripper_key_right_2" type="prismatic">
+    <origin xyz="-0.0648039 -0.00825 -0.02905" rpy="-3.14159 0 0"/>
     <parent link="gripper_frame_2"/>
-    <child link="gripper_carrier_right_1"/>
-    <axis xyz="0 0 0"/>
+    <child link="gripper_pad_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-0" upper="0.0197"/>
   </joint>
-  <!-- Frame gripper_carrier_right_2 (dummy link + fixed joint) -->
-  <link name="gripper_carrier_right_2">
-    <origin xyz="0 0 0" rpy="0 -0 0"/>
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="1e-9"/>
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
-    </inertial>
-  </link>
-  <joint name="gripper_carrier_right_2_frame" type="fixed">
-    <origin xyz="-0.0648039 0.00825 0.04875" rpy="0 -0 -0"/>
-    <parent link="gripper_frame_2"/>
-    <child link="gripper_carrier_right_2"/>
-    <axis xyz="0 0 0"/>
+  <!-- Joint from servo_frame_2_2 to gripper_frame_2 -->
+  <joint name="right_6" type="revolute">
+    <origin xyz="0.01915 -0 0.0422" rpy="0 1.5708 0"/>
+    <parent link="servo_frame_2_2"/>
+    <child link="gripper_frame_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
   </joint>
-  <!-- Frame gripper_key_left_1 (dummy link + fixed joint) -->
-  <link name="gripper_key_left_1">
-    <origin xyz="0 0 0" rpy="0 -0 0"/>
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="1e-9"/>
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
-    </inertial>
-  </link>
-  <joint name="gripper_key_left_1_frame" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <parent link="gripper_key_2"/>
-    <child link="gripper_key_left_1"/>
-    <axis xyz="0 0 0"/>
+  <!-- Joint from arm_2_2 to servo_frame_2_2 -->
+  <joint name="right_5" type="revolute">
+    <origin xyz="-0.0566039 -0 -0.01875" rpy="-0 -1.5708 0"/>
+    <parent link="arm_2_2"/>
+    <child link="servo_frame_2_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
   </joint>
-  <!-- Frame gripper_key_left_2 (dummy link + fixed joint) -->
-  <link name="gripper_key_left_2">
-    <origin xyz="0 0 0" rpy="0 -0 0"/>
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="1e-9"/>
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
-    </inertial>
-  </link>
-  <joint name="gripper_key_left_2_frame" type="fixed">
-    <origin xyz="0 -0 0" rpy="0 0 -0"/>
-    <parent link="gripper_key"/>
-    <child link="gripper_key_left_2"/>
-    <axis xyz="0 0 0"/>
+  <!-- Joint from servo_frame_1_2 to arm_2_2 -->
+  <joint name="right_4" type="revolute">
+    <origin xyz="-0.01905 0.0211 0.0195" rpy="1.5708 0 -1.5708"/>
+    <parent link="servo_frame_1_2"/>
+    <child link="arm_2_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.0472"/>
   </joint>
-  <!-- Frame gripper_carrier_left_1 (dummy link + fixed joint) -->
-  <link name="gripper_carrier_left_1">
-    <origin xyz="0 0 0" rpy="0 -0 0"/>
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="1e-9"/>
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
-    </inertial>
-  </link>
-  <joint name="gripper_carrier_left_1_frame" type="fixed">
-    <origin xyz="-0.0648039 -0.00825 -0.01125" rpy="3.14159 0 0"/>
-    <parent link="gripper_frame"/>
-    <child link="gripper_carrier_left_1"/>
-    <axis xyz="0 0 0"/>
+  <!-- Joint from cf35_12_2 to servo_frame_1_2 -->
+  <joint name="right_3" type="revolute">
+    <origin xyz="0.09766 0 0.019175" rpy="-1.5708 0 -1.5708"/>
+    <parent link="cf35_12_2"/>
+    <child link="servo_frame_1_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
   </joint>
-  <!-- Frame gripper_carrier_left_2 (dummy link + fixed joint) -->
-  <link name="gripper_carrier_left_2">
-    <origin xyz="0 0 0" rpy="0 -0 0"/>
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="1e-9"/>
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
-    </inertial>
-  </link>
-  <joint name="gripper_carrier_left_2_frame" type="fixed">
-    <origin xyz="-0.0648039 0.00825 0.04875" rpy="-0 0 0"/>
-    <parent link="gripper_frame"/>
-    <child link="gripper_carrier_left_2"/>
-    <axis xyz="0 0 0"/>
+  <!-- Joint from bearing_plate_2 to cf35_12_2 -->
+  <joint name="right_2" type="revolute">
+    <origin xyz="0.0183 -0.0185 0.03255" rpy="1.5708 0 -1.5708"/>
+    <parent link="bearing_plate_2"/>
+    <child link="cf35_12_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-0.261799" upper="1.5708"/>
+  </joint>
+  <!-- Joint from aluminium_extrusion_20x20_180 to bearing_plate_2 -->
+  <joint name="right_1" type="revolute">
+    <origin xyz="-0.06435 2e-12 0.238625" rpy="1.5708 -0 -1.5708"/>
+    <parent link="aluminium_extrusion_20x20_180"/>
+    <child link="bearing_plate_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
   </joint>
 </robot>

@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "a9f0ca4d467d5a1de7911c16",
+    "documentMicroversion": "b1a0209260763c6c1405ac70",
+    "elementId": "ad05fdf73883b9018b889cd8",
+    "fullConfiguration": "default",
+    "id": "MBV/K2G8Kpyy8Da9j",
+    "isStandardContent": false,
+    "name": "driver_board_clamp <15>",
+    "partId": "JHD",
+    "suppressed": false,
+    "type": "Part"
+}

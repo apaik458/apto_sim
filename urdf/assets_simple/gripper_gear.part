@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "a9f0ca4d467d5a1de7911c16",
+    "documentMicroversion": "b1a0209260763c6c1405ac70",
+    "elementId": "e4358111394bdf833ff0bca2",
+    "fullConfiguration": "default",
+    "id": "MoGojJPFKHalQY2us",
+    "isStandardContent": false,
+    "name": "gripper_gear <1>",
+    "partId": "JHD",
+    "suppressed": false,
+    "type": "Part"
+}

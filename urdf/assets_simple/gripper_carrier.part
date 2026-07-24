@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "a9f0ca4d467d5a1de7911c16",
+    "documentMicroversion": "b1a0209260763c6c1405ac70",
+    "elementId": "cdbc44262e2367cdc62f4086",
+    "fullConfiguration": "default",
+    "id": "MDULzEFXX4UUSfaeu",
+    "isStandardContent": false,
+    "name": "gripper_carrier <30>",
+    "partId": "JHD",
+    "suppressed": false,
+    "type": "Part"
+}
